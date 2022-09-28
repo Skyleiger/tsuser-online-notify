@@ -1,0 +1,23 @@
+teamspeak:
+  identity:
+    security:
+      level: ${TEAMSPEAK_IDENTITY_SECURITY_LEVEL:10}
+    nickname: ${TEAMSPEAK_IDENTITY_NICKNAME:tsuser-online-notify}
+  server:
+    address:
+      hostname: ${TEAMSPEAK_SERVER_HOSTNAME}
+      port: ${TEAMSPEAK_SERVER_PORT}
+    password: ${TEAMSPEAK_SERVER_PASSWORD:}
+    timeout: ${TEAMSPEAK_SERVER_TIMEOUT:10000}
+telegram:
+  token: ${TELEGRAM_TOKEN}
+  chatId: ${TELEGRAM_CHAT_ID}
+onlineNotify:
+  users: ${ONLINE_NOTIFY_USERS}
+message:
+  user:
+    online: ${USER_ONLINE_MESSAGE:Der Nutzer %nickname% ist nun auf dem TS.}
+    offline: ${USER_OFFLINE_MESSAGE:Der Nutzer %nickname% hat den TS verlassen.}
+
+logging:
+  config: classpath:log4j2.xml

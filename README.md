@@ -1,8 +1,8 @@
-# TSUserOnlineNotify
+# tsuser-online-notify
 
 ## Table of Contents
 
-* [What is TSUserOnlineNotify?](#what-is-tsuseronlinenotify)
+* [What is tsuser-online-notify?](#what-is-tsuser-online-notify)
 * [Features](#features)
 * [Requirements](#requirements)
 * [Build](#build)
@@ -10,9 +10,9 @@
 * [Author](#author)
 * [License](#license)
 
-## What is TSUserOnlineNotify?
+## What is tsuser-online-notify?
 
-**TSUserOnlineNotify** is a TeamSpeak-Client Bot that sends telegram messages when predefined clients connect or
+**tsuser-online-notify** is a TeamSpeak-Client Bot that sends telegram messages when predefined clients connect or
 disconnect.
 
 ## Features
@@ -20,49 +20,41 @@ disconnect.
 * Notification on user connect
 * Notification on user disconnect
 * Applies nickname changes
-* Infinite number of users (via nickname or UUID) can be seta
+* Infinite number of users can be set (via nickname or UUID)
 
 ## Requirements
 
-* Java 11
+* Java 17
 * TeamSpeak-Server to connect
 * Telegram Bot (created by the @BotFather)
 
 ## Build
 
-Building the application requires maven 3.
+Building the application can be done via the included maven wrapper.
 
 ```
-git clone https://github.com/TSUserOnlineNotify.git
-cd TSUserOnlineNotify
-mvn clean package
+git clone https://github.com/Skyleiger/tsuser-online-notify.git
+cd tsuser-online-notify
+./mvnw clean package
 ```
 
 ## Setup
 
-Copy the TSUserOnlineNotify-X.jar (different for each version) from the `target` folder of the build directory. Then the
-application should be started with the following command:
+Copy the tsuser-online-notify.jar from the `target` folder of the build directory.
+Then the application should be started with the following command:
 
 ```
-java -jar TSUserOnlineNotify-X.jar
+java -jar tsuser-online-notify.jar
 ```
 
-If you want to use the Sentry integration, you must also specify the Sentry DSN key. Then the command should look like
-this:
-
-```
-java -Dsentry.dsn=<your-sentry-dsn> -jar TSUserOnlineNotify-X.jar
-```
-
-`<your-sentry-dsn>` must be replaced with the Sentry DSN key.
-
-The application should then close with a database error. Now a config.yml was created, which must be customized. When
-this is done the application is functional and can load modules for crawling, for example.
+The application should then fail with an error.
+This is the case because some environment variables have to be configured for operation.
+See the output for more information.
 
 ## Author
 
-* **Dominic Wienzek** - [Skyleiger](https://github.com/Skyleiger)
+* [Skyleiger](https://github.com/Skyleiger)
 
 ## License
 
-See [LICENSE](https://github.com/TSUserOnlineNotify/blob/master/LICENSE) file for the TSUserOnlineNotify license.
+See [LICENSE](https://github.com/tsuser-online-notify/blob/master/LICENSE) file for the tsuser-online-notify license.

@@ -1,25 +1,20 @@
-<Configuration status="WARN" packages="net.minecrell.terminalconsole,io.sentry.log4j2">
+<Configuration status="WARN">
     <Appenders>
-        <TerminalConsole name="Console">
+        <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout noConsoleNoAnsi="true"
-                           pattern="[%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} %15.15t %-40.40C{1.} %highlight{${LOG_LEVEL_PATTERN:-%5p}}{FATAL=red blink, ERROR=red, WARN=yellow, INFO=green, DEBUG=magenta, TRACE=blue}]: %minecraftFormatting{%msg}%n"/>
-        </TerminalConsole>
+                           pattern="[%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} %15.15t %-40.40C{1.} %highlight{${LOG_LEVEL_PATTERN:-%5p}}{FATAL=red blink, ERROR=red, WARN=yellow, INFO=green, DEBUG=magenta, TRACE=blue}]: %msg%n"/>
+        </Console>
 
-        <RollingRandomAccessFile name="File" fileName="logs/tsuseronlinenotify.log"
-                                 filePattern="logs/$${date:yyyy-MM}/node-%d{yyyy-MM-dd}-%i.log.gz">
+        <RollingRandomAccessFile name="File" fileName="logs/tsuser-online-notify.log"
+                                 filePattern="logs/$${date:yyyy-MM}/tsuser-online-notify-%d{yyyy-MM-dd}-%i.log.gz">
             <PatternLayout
-                    pattern="[%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} %t %c %p]: %minecraftFormatting{%msg}{strip}%n"/>
+                    pattern="[%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}} %t %c %p]: %msg%n"/>
             <Policies>
                 <TimeBasedTriggeringPolicy/>
                 <SizeBasedTriggeringPolicy size="10 MB"/>
             </Policies>
             <DefaultRolloverStrategy max="20"/>
         </RollingRandomAccessFile>
-
-        <Sentry name="Sentry"
-                minimumBreadcrumbLevel="DEBUG"
-                minimumEventLevel="ERROR"
-        />
 
         <Async name="AsyncFile">
             <AppenderRef ref="File"/>
@@ -29,7 +24,6 @@
         <Root level="INFO">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="AsyncFile"/>
-            <AppenderRef ref="Sentry"/>
         </Root>
     </Loggers>
 </Configuration>
