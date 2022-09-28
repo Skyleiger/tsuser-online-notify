@@ -22,10 +22,6 @@
 
     <repositories>
         <repository>
-            <id>repo-dominicwienzek</id>
-            <url>https://repo.dwienzek.de/repository/maven/</url>
-        </repository>
-        <repository>
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
