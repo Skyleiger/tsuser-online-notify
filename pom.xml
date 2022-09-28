@@ -31,17 +31,6 @@
         </repository>
     </repositories>
 
-    <distributionManagement>
-        <repository>
-            <id>repo-dominicwienzek</id>
-            <url>https://repo.dwienzek.de/repository/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>repo-dominicwienzek</id>
-            <url>https://repo.dwienzek.de/repository/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
     <developers>
         <developer>
             <name>Dominic Wienzek</name>
